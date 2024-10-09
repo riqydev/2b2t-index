@@ -1,5 +1,5 @@
 const input = document.getElementById("search__bar");
-const apiUrl = "https://corsproxy.io/?" + "https://api.2b2t.vc/stats/player?playerName="
+const apiUrl = "https://api.2b2t.vc/stats/player?playerName="
 var inputVal;
 
 const searchPage = document.getElementById("search");
