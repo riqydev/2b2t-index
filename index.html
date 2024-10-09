@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2b2t Player Search</title
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <button class="nav__back hidden" onclick="goBack()" id="back"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg></button>
+        <button class="nav__btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg></button>
+    </nav>
+    <main>
+
+        <!-- page 1 -->
+        <section class="search">
+            <div class="search__main" id="search">
+                <h1 class="search__title">2b2t index</h1>
+                <input type="search" class="search__bar" id="search__bar" placeholder="Username">
+            </div>
+
+            <!-- results page after searching -->
+            <div class="search__results hidden" id="results">
+                <img src="https://mineskin.eu/bust/a/100.png" alt="" class="search__pp" id="pp">
+                <h1 class="search__name" id="name">null</h1>
+                <div class="stats-container">
+                    <div class="stats__card card">
+                        <h4 class="stats__title">kills</h4>
+                        <p class="stats__value" id="kills">null</p>
+                    </div>
+                    <div class="stats__card card">
+                        <h4 class="stats__title">deaths</h4>
+                        <p class="stats__value" id="deaths">null</p>
+                    </div>
+                    <div class="stats__card card">
+                        <h4 class="stats__title">kdr</h4>
+                        <p class="stats__value" id="kdr">null</p>
+                    </div>
+                    <div class="stats__card card" >
+                        <h4 class="stats__title">joins</h4>
+                        <p class="stats__value"id="joins">null</p>
+                    </div>
+                    <div class="stats__card card">
+                        <h4 class="stats__title">leaves</h4>
+                        <p class="stats__value" id="leaves">null</p>
+                    </div>
+                    <div class="stats__card card">
+                        <h4 class="stats__title">chats</h4>
+                        <p class="stats__value" id="chats">null</p>
+                    </div>
+                    <div class="stats__card card">
+                        <h4 class="stats__title">time</h4>
+                        <p class="stats__value" id="time">null</p>
+                    </div>
+                    <div class="stats__card card">
+                        <h4 class="stats__title">monthly</h4>
+                        <p class="stats__value" id="monthly">null</p>
+                    </div>
+                    <div class="stats__card card">
+                        <h4 class="stats__title">prio</h4>
+                        <p class="stats__value" id="prio">null</p>
+                    </div>
+                </div>
+
+                <div class="seen-container">
+                    <div id="seen__first" class="seen__card card">
+                        <h4 class="seen__title">first seen:</h4>
+                        <p class="stats__value" id="first-seen">null</p>
+                    </div>
+                    <div id="seen__last" class="seen__card card">
+                        <h4 class="seen__title">last seen:</h4>
+                        <p class="stats__value" id="last-seen">null</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- more info button pre search -->
+            <div class="search__misc" id="misc">
+                <h3 class="search-misc__title">More info</h3>
+                <button class="search-misc__btn" onclick="toAbout()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M246.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 402.7 361.4 265.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 210.7 361.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z"/></svg></button>
+            </div>
+        </section>
+
+        
+        <!-- page 2 -->
+        <section class="about" id="about">
+            <h2 class="about__title">About</h2>
+            <p class="about__txt">This is a player lookup for the
+                minecraft anarchy server 2b2t.<br><br>
+                By inputting a minecraft username that has logged into the server at least one time, you can view their stats. Such as when they were last seen, join date, etc.<br><br>
+                
+                I made this quickly in order to practice some simple web dev stuff / to derust.<br><br>
+                
+                This is only possible thanks to rfresh and his api :]</p>
+
+        </section>
+    </main>
+</body>
+
+    <script src="script.js"></script>
+</html>
